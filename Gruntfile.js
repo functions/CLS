@@ -64,10 +64,9 @@ module.exports = function(grunt) {
                 files: {
                     'dev/scripts/main.js': [
                         'dev/scripts/libs/sea.js',
+                        'dev/scripts/libs/zepto.min.js',
+                        'dev/scripts/libs/fx.js',
                         'dev/scripts/main.js'
-                    ],
-                    'dev/scripts/modules/amap/main.js': [
-                        'dev/scripts/modules/amap/*.js'
                     ]
                 }
             }
@@ -150,7 +149,7 @@ module.exports = function(grunt) {
     // 开发调试
     grunt.registerTask(
         'dev', ['clean:dev', 'copy:dev', 'transport:cmd', 
-                'concat', 'clean:pack']
+                'concat']
     );
 
     // 发布
