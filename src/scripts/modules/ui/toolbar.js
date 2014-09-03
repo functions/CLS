@@ -3,7 +3,9 @@
  */
 define(function(require, exports, module) {
 
+    var map = require('../map/map.js');
     var followFixed = require('../biz/follow_fixed/follow.js');
+    var pointer = require('../map/point.js');
 
     /**
      * toolbar 浮出
@@ -31,20 +33,31 @@ define(function(require, exports, module) {
     }
 
     /**
-     * [followClick description]
-     * @return {[type]} [description]
+     * 点击跟随定点按钮
      */
     function followClick(){
+        // 开始跟随
+        followFixed.startFollow();
+        // 显示定点跟随的操作界面
         slideUp('#toolbar_follow');
     }
 
+    /**
+     * 定点跟随--返回
+     */
     function followReturnClick(){
         followFixed.stopFollow();
         slideDown ('#toolbar_follow');
     }
 
+    /**
+     * 定点按钮
+     */
     function followFixedClick () {
-        followFixed.startFollow();
+        // 添加标记点
+        pointer.new({
+            position: map.getCenter()
+        });
     }
 
     /**
@@ -56,7 +69,7 @@ define(function(require, exports, module) {
             followClick ();
         }
         else if(id === 'auto'){
-            alert('click auto');
+            
         }
     });
 

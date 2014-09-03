@@ -154,9 +154,11 @@ module.exports = function(grunt) {
 
     // 发布
     grunt.registerTask(
-        '__publish', ['clean:dev', 'copy:dev', 'transport:cmd', 'concat', 
-                    'clean:pack', 'clean:publish', 
-                    'copy:publish', 'uglify', 'cssmin']
+        // '__publish', ['clean:dev', 'copy:dev', 'transport:cmd', 'concat', 
+        //             'clean:pack', 'clean:publish', 
+        //             'copy:publish', 'uglify', 'cssmin']
+        '__publish', ['clean:dev', 'copy:dev', 'transport:cmd', 
+                'concat','uglify', 'cssmin']
     );
     grunt.registerTask(
         'publish', ['__publish', 'connect:publish', 'watch:publish']

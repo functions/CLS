@@ -1,4 +1,1 @@
-/**
- * 地图上的标记点
- */
-define("modules/map/point", [], function(require, exports, module) {});
+define("modules/map/point",["./map"],function(a,b,c){var d=a("./map"),e={icon:"images/mark_point.png",position:new AMap.LngLat(116.405467,39.907761)},f={"new":function(a){this._options=$.extend(e,a),this.marker=new AMap.Marker(e),this.marker.setMap(d)},update:function(a){this.marker&&a.position&&this.marker.setPosition(a.position),this.marker&&a.icon&&this.marker.setIcon(a.icon)},remove:function(){this.marker&&this.marker.setMap(null)}};c.exports=f});

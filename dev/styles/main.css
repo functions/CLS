@@ -12,13 +12,20 @@ html, body{
     overflow: hidden;
 }
 
-.toolbar {
+.toolbar-ctn {
     position: absolute;
     bottom: 0;
     z-index: 200;
     width: 100%;
     height: 40px;
     border-top: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.toolbar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background: #fff;
 }
 
@@ -26,7 +33,6 @@ html, body{
     list-style: none;
     margin: 0; 
     padding: 0;
-
 }
 
 .toolbar .toolbar-item {
